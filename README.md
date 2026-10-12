@@ -37,10 +37,28 @@ Start the server script and check for errors.
 Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 
 ## PROGRAM:
+from django.contrib import admin
+from django.urls import path
+from django.http import HttpResponse
 
+
+def my_home_page(request):
+    name = "JANADHYAKSHA G"
+    ref_no = "26003462"
+
+    return HttpResponse(
+        f"<h1>Name: {name}</h1>"
+        f"<p>Register Number: {ref_no}</p>"
+    )
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', my_home_page),
+]
 
 ## OUTPUT:
-<img width="1307" height="845" alt="Screenshot 2026-10-12 093909" src="https://github.com/user-attachments/assets/61d90d8b-7744-4298-a7e2-5d5d9cf5d584" />
+<img width="1341" height="852" alt="Screenshot 2026-10-12 095205" src="https://github.com/user-attachments/assets/f2a92305-56ee-417b-9147-ec0d99571763" />
 
 
 
